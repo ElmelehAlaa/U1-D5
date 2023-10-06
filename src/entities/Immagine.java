@@ -1,18 +1,26 @@
 package entities;
 
-public class Immagine implements Multimediale {
+public class Immagine extends Elemento implements Multimediale {
 
     private String titolo;
     private int luminosita;
 
     public Immagine(String titolo, int luminosita){
-        this.titolo=titolo;
+        this.titolo =titolo;
         this.luminosita=luminosita;
     }
+
 
     public String getTitolo() {
 
         return titolo;
+    }
+
+    @Override
+    public void playGenerale() {
+
+                show();
+
     }
 
     public int diminuisciLuminosita(){
@@ -30,7 +38,7 @@ public class Immagine implements Multimediale {
         return luminosita;
     }
 
-    public void show() {
+    protected void show() {
 
             System.out.println(titolo+ " *".repeat(luminosita));
         }

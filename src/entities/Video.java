@@ -1,26 +1,31 @@
 package entities;
 
-public class Video implements Riproducibile,Multimediale {
+public class Video extends Elemento implements Riproducibile,Multimediale {
 private String titolo;
     private int volume;
     private int luminosita;
     private int durata;
 
 
-    public Video(String titolo, int durata, int volume, int luminosita){
-        this.titolo = titolo;
-        this.durata = durata;
-        this.volume= volume;
+    public Video(String titolo, int volume, int luminosita, int durata){
+        this.titolo=titolo;
+        this.volume=volume;
         this.luminosita=luminosita;
+        this.durata=durata;
     }
 
+    @Override
+    public void playGenerale() {
+
+        play();
+
+    }
     public void play() {
         for(int i=0; i<durata; i++){
             System.out.println(titolo+"!".repeat(volume)+ " *".repeat(luminosita));
         }
 
     }
-
 
     public int getDurata() {
         return 0;

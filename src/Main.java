@@ -3,18 +3,15 @@ import entities.Immagine;
 import entities.RegistrazioneAudio;
 import entities.Video;
 
-import java.util.Arrays;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 Scanner input = new Scanner(System.in);
 
- Elemento[] oggettiMultimediali = new Elemento[5];
- for(int i=0; i<5; i++){
-
+Elemento[] elementi = new Elemento[5];
+for(int i=0; i<5; i++){
         System.out.println("Inserisci il tipo dell'elemento (Immagine/Video/RegistrazioneAudio" );
         String tipo = input.nextLine();
         switch (tipo.toLowerCase()){
@@ -22,9 +19,9 @@ Scanner input = new Scanner(System.in);
          System.out.println("Inserisci il titolo dell'immagine:");
          String titoloImmagine = input.nextLine();
          System.out.println("Inserisci luminosita immagine:");
-         int luminosita = input.nextInt();
+         int luminositaImmagine = input.nextInt();
          input.nextLine();
-         oggettiMultimediali[i]= new Elemento(titoloImmagine,luminosita);
+         elementi[i]= new Immagine(titoloImmagine,luminositaImmagine);
          break;
 
 
@@ -35,8 +32,10 @@ Scanner input = new Scanner(System.in);
                 int volumeVideo= input.nextInt();
                 System.out.println("Inserisci Luminosita' del video:");
                 int luminositaVideo= input.nextInt();
+                System.out.println("Inserisci durata del video");
+                int durataVideo= input.nextInt();
                 input.nextLine();
-                oggettiMultimediali[i]= new Elemento(titoloVideo,volumeVideo,luminositaVideo);
+                elementi[i]= new Video(titoloVideo,volumeVideo,luminositaVideo,durataVideo);
                 break;
 
 
@@ -48,7 +47,7 @@ Scanner input = new Scanner(System.in);
                 System.out.println("Inserisci durata Canzone");
                 int durataCanzone = input.nextInt();
                 input.nextLine();
-                oggettiMultimediali[i]= new Elemento(titoloCanzone,volumeCanzone,durataCanzone);
+                elementi[i]= new RegistrazioneAudio(titoloCanzone,volumeCanzone,durataCanzone);
                 break;
 
 
@@ -62,10 +61,14 @@ Scanner input = new Scanner(System.in);
      if(numeroScelto == 0){
          break;
      }
+     else if (numeroScelto>=1 && numeroScelto<=5) {
+         Elemento elementoScelto = elementi[numeroScelto-1];
+        elementoScelto.playGenerale();
 
 
      }
  }
+     input.close();
 
 //        RegistrazioneAudio registrazione = new RegistrazioneAudio("Canzone",5,3);
 //        registrazione.play();

@@ -1,23 +1,18 @@
 package entities;
 
-public class RegistrazioneAudio implements Riproducibile,Multimediale {
-    private int volume;
+public class RegistrazioneAudio extends Elemento implements Riproducibile,Multimediale {
     private String titolo;
+    private int volume;
     private int durata;
 
-    public RegistrazioneAudio(String titolo, int durata, int volume){
-        this.titolo=titolo;
-        this.durata=durata;
-        this.volume=volume;
-    }
+
+   public RegistrazioneAudio(String titolo, int volume,int durata){
+       this.titolo=titolo;
+       this.volume=volume;
+       this.durata=durata;
+   }
 
 
-    public void play() {
-        for(int i=0; i<durata; i++){
-            System.out.println(titolo+ "!".repeat(volume));
-        }
-
-    }
 
 
     public int getDurata() {
@@ -37,7 +32,18 @@ public class RegistrazioneAudio implements Riproducibile,Multimediale {
         return volume;
     }
 
+    @Override
+    public void playGenerale() {
 
+        play();
+
+    }
+    public void play() {
+        for(int i=0; i<durata; i++){
+            System.out.println(titolo+ "!".repeat(volume));
+        }
+
+    }
     public int alzaVolume() {
         int volumeMax =10;
         if (volume<volumeMax){
