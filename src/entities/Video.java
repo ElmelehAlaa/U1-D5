@@ -1,12 +1,23 @@
 package entities;
 
 public class Video implements Riproducibile,Multimediale {
-
+private String titolo;
     private int volume;
     private int luminosita;
     private int durata;
 
+
+    public Video(String titolo, int durata, int volume, int luminosita){
+        this.titolo = titolo;
+        this.durata = durata;
+        this.volume= volume;
+        this.luminosita=luminosita;
+    }
+
     public void play() {
+        for(int i=0; i<durata; i++){
+            System.out.println(titolo+"!".repeat(volume)+ " *".repeat(luminosita));
+        }
 
     }
 
@@ -22,16 +33,38 @@ public class Video implements Riproducibile,Multimediale {
 
 
     public int abbassaVolume() {
-        return 0;
+        if(volume >0){
+            volume--;
+        }
+        return volume;
     }
 
 
     public int alzaVolume() {
-        return 0;
+        int volumeMax = 10;
+        if(volume < volumeMax){
+            volume++;
+        }
+        return volume;
+
     }
 
 
-    public void getTitolo() {
+    public String getTitolo() {
+      return titolo;
+    }
+    public int aumentaLuminosita(){
+       int luminositaMax= 100;
+        if(luminosita<luminositaMax){
+           luminosita+=10;
+        }
+        return luminosita;
+    }
+    public int diminuisciLuminosita(){
 
+        if(luminosita>10){
+            luminosita-=10;
+        }
+        return luminosita;
     }
 }

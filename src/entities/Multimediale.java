@@ -1,5 +1,5 @@
 package entities;
 
 public interface Multimediale {
-    public void getTitolo();
+    public String getTitolo();
 }

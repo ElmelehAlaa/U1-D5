@@ -2,7 +2,8 @@ package entities;
 
 public class Immagine implements Multimediale {
 
-    public void getTitolo() {
+    public String getTitolo() {
 
+        return null;
     }
 }
