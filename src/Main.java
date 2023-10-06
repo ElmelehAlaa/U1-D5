@@ -1,5 +1,13 @@
+import entities.RegistrazioneAudio;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        RegistrazioneAudio registrazione = new RegistrazioneAudio("Canzone",5,3);
+        registrazione.play();
+        registrazione.alzaVolume();
+        registrazione.play();
+
+
     }
 }
