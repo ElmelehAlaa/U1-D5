@@ -71,23 +71,7 @@ for(int i=0; i<5; i++){
  }
      input.close();
 
-//        RegistrazioneAudio registrazione = new RegistrazioneAudio("Canzone",5,3);
-//        registrazione.play();
-//        registrazione.alzaVolume();
-//        registrazione.play();
-//
-//        Video video = new Video("video", 7,5,100);
-//        video.play();
-//        video.diminuisciLuminosita();
-//        video.play();
-//        video.diminuisciLuminosita();
-//        video.play();
-//        video.abbassaVolume();
-//        video.play();
-//
-//        Immagine immagine = new Immagine("immagine",40);
-//        immagine.show();
-//        immagine.diminuisciLuminosita();
+
 
 
 
