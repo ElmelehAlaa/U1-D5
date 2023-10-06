@@ -1,3 +1,4 @@
+import entities.Immagine;
 import entities.RegistrazioneAudio;
 import entities.Video;
 
@@ -17,6 +18,10 @@ public class Main {
         video.play();
         video.abbassaVolume();
         video.play();
+
+        Immagine immagine = new Immagine("immagine",40);
+        immagine.show();
+        immagine.diminuisciLuminosita();
 
 
     }

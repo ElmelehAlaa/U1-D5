@@ -1,6 +1,6 @@
 package entities;
 
-public class RegistrazioneAudio implements Riproducibile {
+public class RegistrazioneAudio implements Riproducibile,Multimediale {
     private int volume;
     private String titolo;
     private int durata;
@@ -45,5 +45,10 @@ public class RegistrazioneAudio implements Riproducibile {
 
         }
         return volume;
+    }
+
+
+    public String getTitolo() {
+        return titolo;
     }
 }
