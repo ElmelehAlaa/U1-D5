@@ -51,7 +51,7 @@ for(int i=0; i<5; i++){
                 break;
 
 
-            default:System.out.println("Errore inserisci correttamente gli input");
+            default:System.out.println("Errore inserisci correttamente gli input");i--;
             break;
 
  }}
@@ -64,8 +64,9 @@ for(int i=0; i<5; i++){
      else if (numeroScelto>=1 && numeroScelto<=5) {
          Elemento elementoScelto = elementi[numeroScelto-1];
         elementoScelto.playGenerale();
-
-
+     }
+     else if (numeroScelto>5){
+        System.err.println("Numero superiore a 5 , Inserisci un numero da 1 a 5 per eseguire e 0 per interrompere!");
      }
  }
      input.close();

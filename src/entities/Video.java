@@ -1,6 +1,9 @@
 package entities;
 
-public class Video extends Elemento implements Riproducibile,Multimediale {
+import interfaces.Multimediale;
+import interfaces.Riproducibile;
+
+public class Video extends Elemento implements Riproducibile, Multimediale {
 private String titolo;
     private int volume;
     private int luminosita;

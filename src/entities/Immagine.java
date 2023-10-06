@@ -1,5 +1,7 @@
 package entities;
 
+import interfaces.Multimediale;
+
 public class Immagine extends Elemento implements Multimediale {
 
     private String titolo;
